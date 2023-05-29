@@ -36,16 +36,16 @@ function Discover() {
                     </select>
                 </div>
                 <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-                    {data?.tracks?.map((song, index) => (
-                        <SongCard 
-                            key={ song.key }
-                            song={ song }
-                            index={ index }
-                            isPlaying={ isPlaying }
-                            activeSong={ activeSong }
-                            data={ data }
-                        />
-                    ))}
+                        {data?.tracks?.map((song, index) => (
+                            <SongCard 
+                                key={ song.key }
+                                song={ song }
+                                index={ index }
+                                isPlaying={ isPlaying }
+                                activeSong={ activeSong }
+                                data={ data }
+                            />
+                        ))}
                 </div>
             </div>
             <div className="xl:sticky relative top-0 h-fit sm:order-first md:order-first lg:order-last">

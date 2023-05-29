@@ -8,11 +8,9 @@ function SongBar({ song, index, artistId, isPlaying, activeSong, handlePause, ha
     if (!song.images?.coverart) {
         return null;
     }
-    // console.log(song);
-    // song.map(data => { console.log(data) });
     return (
         <div className={ `w-full flex flex-row items-center hover:bg-[#123456] ${ activeSong?.title === song?.title ? 'bg-[#123456]' : 'bg-transparent' } py-2 p-4 rounded-lg cursor-pointer mb-2` }>
-            <p className="font-bold text-base text-white mr-3">{ index > 2  ? (index) : (index + 1) }.</p>
+            <p className="font-bold text-base text-white mr-3">{ index + 1 }.</p>
             <div className="flex-1 flex flex-row justify-between items-center">
                 <img
                     className="w-20 h-20 rounded-lg"

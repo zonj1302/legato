@@ -1,9 +1,8 @@
 import SongBar from './SongBar';
-import PlayPause from './PlayPause';
 
 
 function RelatedSongs({ data, isPlaying, activeSong, handlePause, handlePlay, artistId }) {
-    // console.log(data);
+    console.log(data);
     return (
         <div className="flex flex-col ms-2">
             <h1 className="font-bold text-2xl text-white">Related Songs:</h1>

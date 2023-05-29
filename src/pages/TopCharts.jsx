@@ -15,7 +15,6 @@ function TopCharts() {
             <Error />
         )
     }
-    // console.log(data);
     return (
         <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-[900px] lg:order-first">
@@ -23,16 +22,16 @@ function TopCharts() {
                     <h1 className="font-bold text-3xl text-white text-left">Discover Top Charts</h1>
                 </div>
                 <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-                    {data?.tracks?.map((song, index) => (
-                        <SongCard 
-                            key={ song.key }
-                            song={ song }
-                            index={ index }
-                            isPlaying={ isPlaying }
-                            activeSong={ activeSong }
-                            data={ data }
-                        />
-                    ))}
+                        {data?.tracks?.map((song, index) => (
+                            <SongCard 
+                                key={ song.key }
+                                song={ song }
+                                index={ index }
+                                isPlaying={ isPlaying }
+                                activeSong={ activeSong }
+                                data={ data }
+                            />
+                        ))}
                 </div>
             </div>
             <div className="xl:sticky relative top-0 h-fit sm:order-first md:order-first lg:order-last">

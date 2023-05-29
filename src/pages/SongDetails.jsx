@@ -6,7 +6,6 @@ import { useGetSongDetailsQuery, useGetTopChartsQuery  } from '../redux/api/song
 
 function SongDetails() {
     const { songid } = useParams();
-    // console.log(songid);
     const dispatch = useDispatch();
     const { activeSong, isPlaying } = useSelector((state) => state.player)
     const { data: songData , isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid });
@@ -35,7 +34,6 @@ function SongDetails() {
     }
 
     console.log(songData);
-    // console.log(artistId, 'is the artist Id');
     return (
         <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-[900px] lg:order-first">

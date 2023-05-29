@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { Searchbar, Sidebar, SongPlayer, TopPlay } from './components';
-// import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, TopCharts } from './pages/pages';
+import { Searchbar, Sidebar, SongPlayer } from './components';
 import { ArtistDetails, TopArtists, Discover, Search, SongDetails, TopCharts } from './pages';
 
 function App() {

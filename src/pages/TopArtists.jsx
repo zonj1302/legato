@@ -21,12 +21,12 @@ function TopArtists() {
                     <h1 className="font-bold text-3xl text-white text-left">Top Artist</h1>
                 </div>
                 <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-                    {data?.tracks?.map((song, index) => (
-                        <ArtistCard 
-                            key={ song.key }
-                            song={ song }
-                        />
-                    ))}
+                        {data?.tracks?.map((song, index) => (
+                            <ArtistCard 
+                                key={ song.key }
+                                song={ song }
+                            />
+                        ))}
                 </div>
             </div>
             <div className="xl:sticky relative top-0 h-fit sm:order-first md:order-first lg:order-last">

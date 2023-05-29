@@ -6,7 +6,6 @@ import { TopPlay } from '../components';
 
 function ArtistDetails() {
     const { id: artistId } = useParams();
-    // console.log(songid);
     const { activeSong, isPlaying } = useSelector((state) => state.player)
     const { data: artistData, isFetching: isFetchingArtistDetail, error } = useGetArtistDetailsQuery(artistId);
     
@@ -21,10 +20,6 @@ function ArtistDetails() {
             <Error />
         )
     }
-
-    console.log(artistData);
-    // console.log(artistData?.data?.map(detail => Object.values(detail?.attributes?.name)))
-    // console.log(Object.values(artistData?.data.map(song => song.attributes.name)))
 
     return (
         <div className="flex flex-col lg:flex-row">

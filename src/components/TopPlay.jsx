@@ -1,7 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
@@ -16,13 +13,12 @@ import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import { useGetTopChartsQuery } from '../redux/api/songApi';
 
 function TopChartCard({ song, index, isPlaying, activeSong, handlePause, handlePlay }) {
-    // console.log(song);
     if (!song.images?.coverart) {
         return null;
     }
     return (
         <div className="w-full flex flex-row items-center hover:bg-[#123456] py-2 p-2 rounded-lg cursor-pointer">
-            <p className="font-bold text-base text-white mr-3">{ index > 2  ? (index) : (index + 1) }.</p>
+            <p className="font-bold text-base text-white mr-3">{ index + 1 }.</p>
             <div className="flex-1 flex flex-row justify-between items-center">
                 <img className="w-16 h-16 rounded-lg" src={ song?.images?.coverart } alt={ song.title } />
                 <div className="flex-1 flex flex-col justify-center mx-3">
@@ -50,7 +46,7 @@ function TopPlay() {
     const { activeSong, isPlaying } = useSelector((state) => state.player);
     const { data } = useGetTopChartsQuery();
     const divRef = useRef(null);
-    const topPlays = data?.tracks?.slice(0,6);
+    const topPlays = data?.tracks?.slice(0,5);
 
     useEffect(() => {
         divRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -65,43 +61,6 @@ function TopPlay() {
         dispatch(playPause(true));
     }
 
-    // const settings = {
-    //     dots: true,
-    //     infinite: false,
-    //     speed: 500,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 4,
-    //     initialSlide: 0,
-    //     responsive: [
-    //       {
-    //         breakpoint: 1024,
-    //         settings: {
-    //           slidesToShow: 3,
-    //           slidesToScroll: 3,
-    //           infinite: true,
-    //           dots: true
-    //         }
-    //       },
-    //       {
-    //         breakpoint: 600,
-    //         settings: {
-    //           slidesToShow: 2,
-    //           slidesToScroll: 2,
-    //           infinite: true,
-    //           initialSlide: 2
-    //         }
-    //       },
-    //       {
-    //         breakpoint: 480,
-    //         settings: {
-    //           slidesToShow: 2,
-    //           slidesToScroll: 1,
-    //           infinite: true,
-    //         }
-    //       }
-    //     ]
-    // };
-
     return (
         <div ref={ divRef } className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[450px] max-w-full flex flex-col">
             <div className="w-full flex flex-col">
@@ -113,7 +72,7 @@ function TopPlay() {
                     slidesPerView="auto"
                     spaceBetween={ 10 }
                     freeMode
-                    centeredSlides
+                    // centeredSlides
                     modules={ [FreeMode] }
                     className="mt-4"
                 >
@@ -131,24 +90,6 @@ function TopPlay() {
                         )
                     ))}
                 </Swiper>
-                {/* <Slider { ...settings }>
-                    {topPlays?.map((song, index) => (
-                        (song.images?.coverart &&
-                            <div 
-                                key={ song?.key } 
-                                className="shadow-lg rounded-full animate-slideright"
-                            >
-                                <Link to={`/artists/${song?.artists[0].adamid}`}>
-                                    <img 
-                                        className="rounded-full object-cover" 
-                                        src={ song?.images?.background } 
-                                        alt={ song.subtitle }
-                                    />
-                                </Link>
-                            </div>
-                        )
-                    ))}
-                </Slider> */}
             </div>            
             <div className="w-full flex flex-col mt-8">
                 <div className="flex flex-row justify-between items-center">

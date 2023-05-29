@@ -28,16 +28,16 @@ function Search() {
                     <h1 className="font-bold text-3xl text-white text-left">Results for {searchTerm}</h1>
                 </div>
                 <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-                    {searchedSong.map((song, index) => (
-                        <SongCard 
-                            key={ song.key }
-                            song={ song }
-                            index={ index }
-                            isPlaying={ isPlaying }
-                            activeSong={ activeSong }
-                            data={ data }
-                        />
-                    ))}
+                        {searchedSong.map((song, index) => (
+                            <SongCard 
+                                key={ song.key }
+                                song={ song }
+                                index={ index }
+                                isPlaying={ isPlaying }
+                                activeSong={ activeSong }
+                                data={ data }
+                            />
+                        ))}
                 </div>
             </div>
             <div className="xl:sticky relative top-0 h-fit sm:order-first md:order-first lg:order-last">
